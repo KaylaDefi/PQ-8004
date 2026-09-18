@@ -1,0 +1,13 @@
+[package]
+name = "agent"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "ML-DSA-44 keypair and payment signing for the PQ-8004 protocol"
+
+[dependencies]
+types = { path = "../types" }
+registry = { path = "../registry" }
+ml-dsa = { version = "0.0.4", features = ["rand_core"] }
+pq_address = "0.1"
+rand = "0.8"

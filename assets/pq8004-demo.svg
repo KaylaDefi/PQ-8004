@@ -1,0 +1,42 @@
+<svg width="1280" height="920" viewBox="0 0 1280 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="920" fill="#0B1220"/>
+  <rect x="40" y="40" width="1200" height="840" rx="18" fill="#0F1728" stroke="#213048"/>
+
+  <text x="105" y="118" fill="#DCE7F7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="54" font-weight="700">PQ-8004</text>
+  <text x="105" y="167" fill="#7F93B1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23">Post-quantum x402 payment flow — ML-DSA-44 × ERC-8004</text>
+
+  <rect x="95" y="205" width="1090" height="118" rx="12" fill="#121E2E" stroke="#2C3D52"/>
+  <text x="132" y="248" fill="#8DA3C4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" letter-spacing="2.5">ML-DSA-44 AGENT IDENTITY</text>
+  <text x="132" y="292" fill="#59A8FF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">yp1qpg06gf2ykgvwy7kaxg1dzkrh4093m51nsg7zyvwf95xalpd9k9a3ms7p7ssu</text>
+  <text x="132" y="323" fill="#7E92AA" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">pq_address = Bech32m(SHA-256(verifying_key))   •   1,312-byte verifying key</text>
+
+  <rect x="95" y="350" width="1090" height="82" rx="12" fill="#111C2A" stroke="#2A3A4D"/>
+  <text x="135" y="391" fill="#39D98A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">✓</text>
+  <text x="175" y="395" fill="#E6EDF7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="25">Probe — no X-Payment header</text>
+  <rect x="955" y="370" width="155" height="36" rx="8" fill="#3A2A1A"/>
+  <text x="1012" y="395" text-anchor="middle" fill="#F4BF4F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">402</text>
+  <text x="175" y="425" fill="#8EA4C1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">nonce: 71a83a2c  scheme: ml-dsa-44</text>
+
+  <rect x="95" y="452" width="1090" height="82" rx="12" fill="#111C2A" stroke="#2A3A4D"/>
+  <text x="135" y="493" fill="#39D98A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">✓</text>
+  <text x="175" y="497" fill="#E6EDF7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="25">Sign &amp; pay</text>
+  <rect x="955" y="472" width="155" height="36" rx="8" fill="#1A3A1A"/>
+  <text x="1012" y="497" text-anchor="middle" fill="#39D98A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">200</text>
+  <text x="175" y="527" fill="#8EA4C1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">ML-DSA-44 sig: 2420 bytes  (Ed25519 would be 64)</text>
+
+  <rect x="95" y="554" width="1090" height="82" rx="12" fill="#111C2A" stroke="#2A3A4D"/>
+  <text x="135" y="595" fill="#39D98A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">✓</text>
+  <text x="175" y="599" fill="#E6EDF7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="25">Reputation after simulated payments</text>
+  <text x="175" y="629" fill="#8EA4C1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">score: 0.8986  (successes: 61  failures: 6)</text>
+
+  <rect x="95" y="656" width="1090" height="82" rx="12" fill="#111C2A" stroke="#2A3A4D"/>
+  <text x="135" y="697" fill="#39D98A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">✓</text>
+  <text x="175" y="701" fill="#E6EDF7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="25">Failure rate injected by simulation</text>
+  <rect x="955" y="676" width="155" height="36" rx="8" fill="#3A2A1A"/>
+  <text x="1012" y="701" text-anchor="middle" fill="#F4BF4F" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">402</text>
+  <text x="175" y="731" fill="#8EA4C1" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">simulated outcomes: 15 passed / 6 failed  (current score: 0.8986)</text>
+
+  <rect x="95" y="768" width="1090" height="70" rx="12" fill="#123223" stroke="#2EA04340"/>
+  <text x="132" y="810" fill="#3FB950" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="30" font-weight="700">Prototype trace complete: 61 passed / 6 failed • current reputation</text>
+  <text x="960" y="810" fill="#3FB950" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="30" font-weight="700">0.8986</text>
+</svg>

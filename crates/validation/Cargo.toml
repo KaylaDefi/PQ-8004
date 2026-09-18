@@ -1,0 +1,11 @@
+[package]
+name = "validation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Policy-based payment validation (Layer 3) for the PQ-8004 trust stack"
+
+[dependencies]
+types = { path = "../types" }
+reputation = { path = "../reputation" }
+thiserror = "1"

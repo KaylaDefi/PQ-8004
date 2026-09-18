@@ -1,0 +1,13 @@
+[package]
+name = "reputation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Bayesian + time-decay reputation scoring (Layer 2) for the PQ-8004 trust stack"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+thiserror = "1"
+
+[dev-dependencies]
+serde_json = "1"

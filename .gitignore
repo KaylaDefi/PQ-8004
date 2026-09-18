@@ -1,0 +1,11 @@
+# Rust
+/target/
+
+# Local config
+.env
+.env.*
+*.key
+*.pem
+
+# macOS
+.DS_Store
