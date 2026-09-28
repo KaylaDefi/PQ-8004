@@ -440,6 +440,16 @@ const UI: &str = r##"<!DOCTYPE html>
     .banner.visible { opacity: 1; }
     .banner strong { color: #56d364; }
 
+    /* simulate section */
+    .simulate-section { margin-bottom: 2rem; }
+    .simulate-label { font-size: .72rem; color: #484f58; text-transform: uppercase; letter-spacing: .08em; text-align: center; margin-bottom: .85rem; }
+    .controls { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+    .ctrl-label { display: flex; align-items: center; gap: .5rem; font-size: .8rem; color: #8b949e; }
+    .ctrl-input { width: 64px; background: #0d1117; border: 1px solid #30363d; color: #e6edf3; border-radius: 6px; padding: .45rem .5rem; font: inherit; }
+    .ctrl-btn { background: #1f6feb; color: white; border: none; border-radius: 6px; padding: .6rem .9rem; font: inherit; cursor: pointer; }
+    .ctrl-btn:hover { background: #388bfd; }
+    .stat-val.blue { color: #58a6ff; }
+
     /* pulse dot */
     .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%;
            background: #3fb950; margin-left: 6px; vertical-align: middle;
@@ -451,7 +461,7 @@ const UI: &str = r##"<!DOCTYPE html>
 <div class="wrap">
   <header>
     <h1>&#x2B21; <span>PQ-8004</span> Live Demo</h1>
-    <p class="sub">Post-quantum x402 payment flow — ML-DSA-44 &times; ERC-8004<span class="dot"></span></p>
+    <p class="sub">Post-quantum agent identity — ML-DSA-44 &times; x402<span class="dot"></span></p>
   </header>
 
   <div class="agent-card" id="agent-card">
@@ -462,19 +472,7 @@ const UI: &str = r##"<!DOCTYPE html>
 
   <div class="steps" id="steps"></div>
 
-<div class="controls" style="display:flex; gap:.75rem; flex-wrap:wrap; align-items:center; margin-bottom:2rem;">
-      <label style="display:flex; align-items:center; gap:.5rem; font-size:.8rem; color:#8b949e;">
-        successes
-        <input id="success-count" type="number" min="0" max="25" value="3" style="width:64px; background:#0d1117; border:1px solid #30363d; color:#e6edf3; border-radius:6px; padding:.45rem .5rem;" />
-      </label>
-      <label style="display:flex; align-items:center; gap:.5rem; font-size:.8rem; color:#8b949e;">
-        failures
-        <input id="fail-count" type="number" min="0" max="25" value="1" style="width:64px; background:#0d1117; border:1px solid #30363d; color:#e6edf3; border-radius:6px; padding:.45rem .5rem;" />
-      </label>
-      <button id="simulate-btn" style="background:#1f6feb; color:white; border:none; border-radius:6px; padding:.6rem .9rem; font:inherit; cursor:pointer;">simulate payment</button>
-    </div>
-
-    <div class="stats" id="stats">
+  <div class="stats" id="stats">
       <div class="stat">
         <div class="stat-val green" id="score-val">—</div>
         <div class="stat-label">reputation score</div>
@@ -484,7 +482,7 @@ const UI: &str = r##"<!DOCTYPE html>
         <div class="stat-label">ML-DSA-44 sig bytes</div>
       </div>
       <div class="stat">
-        <div class="stat-val" style="color:#58a6ff">64</div>
+        <div class="stat-val blue">64</div>
         <div class="stat-label">Ed25519 sig bytes</div>
       </div>
       <div class="stat">
@@ -493,8 +491,19 @@ const UI: &str = r##"<!DOCTYPE html>
       </div>
     </div>
 
-    <div class="banner" id="banner">
-      Prototype trace: challenge issued, payment signed, verification passed, and replay rejected during a local proof-of-concept run.
+    <div class="simulate-section">
+      <div class="simulate-label">— explore reputation math —</div>
+      <div class="controls">
+        <label class="ctrl-label">
+          successes
+          <input id="success-count" type="number" min="0" max="25" value="3" class="ctrl-input" />
+        </label>
+        <label class="ctrl-label">
+          failures
+          <input id="fail-count" type="number" min="0" max="25" value="1" class="ctrl-input" />
+        </label>
+        <button id="simulate-btn" class="ctrl-btn">simulate payment</button>
+      </div>
     </div>
 </div>
 
@@ -546,12 +555,6 @@ const UI: &str = r##"<!DOCTYPE html>
       }
       if (d.sig_bytes) {
         document.getElementById('sig-val').textContent = d.sig_bytes.toLocaleString();
-      }
-      if (d.complete) {
-        const banner = document.getElementById('banner');
-        const score = d.score != null ? Number(d.score).toFixed(4) : '—';
-        banner.textContent = `Prototype trace complete: ${d.successes || 0} passed / ${d.failures || 0} failed • current reputation ${score}`;
-        banner.classList.add('visible');
       }
     } catch (e) { /* server may still be starting */ }
   }
